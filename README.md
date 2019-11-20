@@ -9,7 +9,7 @@ In aspects of Industry 4.0, we especially focus on the security risks of ICS in 
 
 <img src="toolSummary.png" alt="Overview of the demo tool" title="Overview of the demo tool" width="50%" height="50%">
 
-<a href="https://github.com/sisoc-tokyo/AttackDemoTookkit_Industry4/blob/master/AttackDemoTookkitsforIndustry4usingAIandCloud.pdf.pdf" download>Documentation of the tool is here</a>
+<a href="https://github.com/sisoc-tokyo/AttackDemoTookkit_Industry4/blob/master/AttackDemoTookkitsforIndustry4usingAIandCloud.pdf" download>Documentation of the tool is here</a>
 
 ## Demo Tool detail
 Our demonstration tool consists of the following.
