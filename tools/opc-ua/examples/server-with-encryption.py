@@ -6,6 +6,17 @@ sys.path.insert(0, "..")
 from opcua import ua, Server
 from opcua.crypto import security_policies
 
+import urllib.request
+import json
+
+def get_data():
+    url = 'http://127.0.0.1:5000/preds?data=status'
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as res:
+        #body = res.read()
+        body = json.load(res)
+    print("status from AI server:"+str(body))
+    return str(body)
 
 if __name__ == "__main__":
 
@@ -35,11 +46,12 @@ if __name__ == "__main__":
     # starting!
     server.start()
     try:
-        count = 0
         while True:
-            time.sleep(1)
-            count += 0.1
-            myvar.set_value(count)
+            # Get desireble status from AI server
+            status = get_data()
+            myvar.set_value(status)
+            time.sleep(10)
     finally:
         #close connection, remove subcsriptions, etc
         server.stop()
+

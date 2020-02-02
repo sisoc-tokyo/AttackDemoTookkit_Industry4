@@ -5,7 +5,6 @@ sys.path.insert(0, "..")
 from opcua import Client,ua
 from opcua.crypto import security_policies
 
-
 if __name__ == "__main__":
 
     client = Client("opc.tcp://localhost:4840/freeopcua/server/")
