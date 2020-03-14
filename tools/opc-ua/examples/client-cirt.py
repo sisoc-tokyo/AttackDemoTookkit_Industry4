@@ -41,6 +41,11 @@ if __name__ == "__main__":
         print("myobj is: ", obj)
         print("myvar val is: ", myvar_val)
 
+        # set value
+        myvar.set_value(0)
+        myvar_val = myvar.get_value()
+        print("myvar val is: ", myvar_val)
+
         # Stacked myvar access
         # print("myvar is: ", root.get_children()[0].get_children()[1].get_variables()[0].get_value())
 

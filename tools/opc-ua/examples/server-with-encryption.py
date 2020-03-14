@@ -48,7 +48,8 @@ if __name__ == "__main__":
     try:
         while True:
             # Get desireble status from AI server
-            status = get_data()
+            #status = get_data()
+            status =1
             myvar.set_value(status)
             time.sleep(10)
     finally:

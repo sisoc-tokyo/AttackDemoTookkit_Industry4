@@ -64,6 +64,10 @@ if __name__ == "__main__":
         #value=var.set_value(3.9) # set node value using implicit data type
         #print("value:"+value)
 
+        dev = client.get_node("ns=2;i=1")
+        print("dev:",dev)
+
+
         # gettting our namespace idx
         uri = "http://examples.freeopcua.github.io"
         idx = client.get_namespace_index(uri)
