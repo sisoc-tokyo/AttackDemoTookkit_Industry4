@@ -16,20 +16,24 @@ Our demonstration tool consists of the following.
 * the water supply pump system
 * Attack tools
 
-Structure of the water supply pump system is as follows.
+The structure of the water supply pump system is as follows.
 * Water pump: Provides water for consumers.
-* Controller: Controls the water level of the cylinder.
-* OPC / HMI Server (Windows Server 2008 R2): Relays communications among Controller using Modbus/TCP.
-* AI Connection server (Windows 7): Stores the dataset of the past water level per time.
-* AI server on the cloud (Cent OS 7): Instruct the desirable water level per time using AI.
+* Controller: Controls the water level of the cylinder using Modbus/TCP.
+* OPC / HMI Server (Windows Server 2008 R2): OPC server relays communications among Controller using Modbus/TCP. HMI visualizes the current water level.
+* IoT sensor: Measure current temperature.
+* Production control server (Windows Server 2008 R2): Stores the dataset of the past water level per time and temperature.
+* AI server on the cloud (Cent OS 7): Instruct the desirable water level per time and temperature using the machine learning.
 
 ## Attack scenario
+The following is the attacker's activities.
 1. Infects a PC in the Business zone
-2. A lateral movement to AI Connection Server
-3. Contaminate the AI dataset
+2. A lateral movement to the Production control server
+3. Contaminate the AI dataset on the Production control server
+
+The following is the normal activities.
 4. The contaminated dataset is sent to AI Server
-5. OPC Server queries the desirable water level to the AI Server
-6. AI Server returns incorrect value judged from the contaminated dataset
-7. OPC Server sends incorrect SetPoint to PLC
-8. The water rate is maliciously changed
+5. The Production control server queries the desirable water level to the AI Server
+6. AI Server returns incorrect water level  judged from the contaminated dataset
+7. The Production control server sends incorrect  SetPOint to the OPC server
+8. The water level is unintentionally changed
   
